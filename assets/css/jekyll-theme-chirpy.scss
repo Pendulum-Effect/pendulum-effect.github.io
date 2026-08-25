@@ -279,20 +279,23 @@
    Card language, extended: search results, right panel, tag chips
    --------------------------------------------------------------- */
 
-/* Search results as square-ish tiles (two-up on desktop) */
+/* Search results as square-ish tiles: a strict two-column grid.
+   (Bootstrap's d-flex utility uses !important, so the grid
+   override must too.) */
 #search-results {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
   gap: 1.25rem;
-  align-items: stretch;
   margin-top: 1.5rem;
 }
 
 #search-results > article {
-  flex: 0 1 calc(50% - 0.75rem);
   background: var(--card-bg);
   border: 1px solid var(--main-border-color);
   border-radius: 0.65rem;
   padding: 1.25rem 1.4rem;
-  margin: 0; /* container gap handles spacing */
+  margin: 0; /* grid gap handles spacing */
   transition: background 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -311,8 +314,8 @@
 }
 
 @media (max-width: 849px) {
-  #search-results > article {
-    flex-basis: 100%;
+  #search-results {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
