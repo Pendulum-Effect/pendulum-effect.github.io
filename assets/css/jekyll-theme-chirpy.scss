@@ -287,8 +287,29 @@
   border: 1px solid var(--main-border-color);
   border-radius: 0.65rem;
   padding: 1.4rem 1.6rem;
-  margin: 0.6rem 0;
+
+  /* The theme's px-* utility classes zero out side padding at
+     desktop widths with !important, so these must match force */
+  padding-left: 1.6rem !important;
+  padding-right: 1.6rem !important;
+  margin: 0 0 1rem;
   transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Desktop two-up: theme uses 45% + 1.5rem margins (a ~3rem center
+   gap); tighten to a 1rem gap matching the vertical rhythm */
+@media (min-width: 1200px) {
+  #search-results > article {
+    width: calc(50% - 0.5rem);
+  }
+
+  #search-results > article:nth-child(odd) {
+    margin-right: 0.5rem;
+  }
+
+  #search-results > article:nth-child(even) {
+    margin-left: 0.5rem;
+  }
 }
 
 #search-results > article p {
