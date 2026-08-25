@@ -245,10 +245,13 @@
 
   #search {
     position: absolute;
-    top: 50%;
+
+    /* Vertical center of the 5rem band above the first card
+       (3rem topbar + 2rem content top margin) */
+    top: 2.5rem;
     left: 45.85%; /* center of the 11/12 main column (no side panel yet) */
     transform: translate(-50%, -50%);
-    width: min(34rem, 58%);
+    width: 61%; /* ~2/3 of the main column at this width */
     margin: 0;
     padding: 0.35rem 0.85rem;
     border-radius: 0.65rem;
@@ -267,5 +270,6 @@
 @media (min-width: 1200px) {
   #search {
     left: 37.5%; /* main column narrows to 9/12 once the right panel appears */
+    width: 50%; /* ~2/3 of the 9/12 card column */
   }
 }
