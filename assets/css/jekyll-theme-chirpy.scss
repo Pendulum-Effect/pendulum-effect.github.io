@@ -130,7 +130,8 @@
   --nav-icon-4: #bf5af2; /* Archives */
   --nav-icon-5: #ff6482; /* About */
   --nav-chip-bg: #000000;
-  --nav-chip-shadow: 0 2px 6px rgb(0 0 0 / 50%);
+  --nav-chip-shadow:
+    0 2px 6px rgb(0 0 0 / 55%), inset 0 0 0 1px rgb(255 255 255 / 16%);
 }
 
 /* Apply per mode, honoring the sidebar toggle and OS preference */
@@ -199,4 +200,27 @@
 
 #sidebar .nav-item:nth-child(5) .nav-link > i {
   color: var(--nav-icon-5);
+}
+
+/* Let the subtitle grow instead of overflowing into the nav
+   (theme hard-codes height: 3rem, which overlaps when the
+   tagline wraps to 3+ lines on narrow screens) */
+#sidebar .site-subtitle {
+  height: auto;
+  min-height: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Center the avatar; translate offsets the profile block's
+   asymmetric padding (2.5rem left / 1.25rem right) */
+#sidebar #avatar {
+  margin-left: auto;
+  margin-right: auto;
+  translate: -0.625rem 0;
+}
+
+@media (min-width: 1920px) {
+  #sidebar #avatar {
+    translate: -1.125rem 0; /* padding grows to 3.5rem left on very large screens */
+  }
 }
