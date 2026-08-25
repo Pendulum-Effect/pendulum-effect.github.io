@@ -274,3 +274,70 @@
     width: 50%; /* ~2/3 of the 9/12 card column */
   }
 }
+
+/* ---------------------------------------------------------------
+   Card language, extended: search results, right panel, tag chips
+   --------------------------------------------------------------- */
+
+/* Search results as square-ish tiles (two-up on desktop) */
+#search-results {
+  gap: 1.25rem;
+  align-items: stretch;
+  margin-top: 1.5rem;
+}
+
+#search-results > article {
+  flex: 0 1 calc(50% - 0.75rem);
+  background: var(--card-bg);
+  border: 1px solid var(--main-border-color);
+  border-radius: 0.65rem;
+  padding: 1.25rem 1.4rem;
+  margin: 0; /* container gap handles spacing */
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+#search-results > article:hover {
+  background: var(--card-hover-bg);
+  box-shadow: var(--spotlight-shadow);
+}
+
+#search-results > article h2 {
+  margin-top: 0;
+}
+
+#search-results > article h2 a {
+  font-size: 1.25rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 849px) {
+  #search-results > article {
+    flex-basis: 100%;
+  }
+}
+
+/* Right-panel sections (Recently Updated / Trending Tags) as cards */
+#panel-wrapper .access > section {
+  background: var(--card-bg);
+  border: 1px solid var(--main-border-color);
+  border-radius: 0.65rem;
+  padding: 1rem 1.1rem 0.85rem;
+}
+
+#panel-wrapper .access > section:not(:first-child) {
+  margin-top: 1.5rem;
+}
+
+/* Tag pills as square-ish chips, everywhere they appear */
+#panel-wrapper .post-tag,
+#search-hints .post-tag {
+  background: var(--main-bg);
+  border: 1px solid var(--main-border-color);
+  border-radius: 0.5rem;
+}
+
+#panel-wrapper .post-tag:hover,
+#search-hints .post-tag:hover {
+  border-color: var(--link-color);
+  color: var(--link-color);
+}
