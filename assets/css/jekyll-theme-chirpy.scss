@@ -72,6 +72,9 @@
   --nav-icon-5: #ff375f; /* About */
   --nav-chip-bg: #000000;
   --nav-chip-shadow: 0 2px 5px rgb(0 0 0 / 28%);
+  --spotlight-bg: #ffffff;
+  --spotlight-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+  --spotlight-ring: 0 0 0 3px rgb(0 122 255 / 28%);
 }
 
 @mixin gg-dark {
@@ -132,6 +135,9 @@
   --nav-chip-bg: #000000;
   --nav-chip-shadow:
     0 2px 6px rgb(0 0 0 / 55%), inset 0 0 0 1px rgb(255 255 255 / 16%);
+  --spotlight-bg: #2c2c2e;
+  --spotlight-shadow: 0 2px 10px rgb(0 0 0 / 40%);
+  --spotlight-ring: 0 0 0 3px rgb(10 132 255 / 38%);
 }
 
 /* Apply per mode, honoring the sidebar toggle and OS preference */
@@ -222,5 +228,32 @@
 @media (min-width: 1920px) {
   #sidebar #avatar {
     translate: -1.125rem 0; /* padding grows to 3.5rem left on very large screens */
+  }
+}
+
+/* Remove the breadcrumb from the topbar */
+#breadcrumb {
+  display: none;
+}
+
+/* Spotlight-style search, centered in the topbar (desktop only —
+   the mobile search overlay keeps stock behavior) */
+@media (min-width: 850px) {
+  #search {
+    width: 100%;
+    max-width: 34rem;
+    margin-left: auto;
+    margin-right: auto; /* centers it; also cancels the theme's right offsets */
+    padding: 0.35rem 0.85rem;
+    border-radius: 0.65rem;
+    border: 1px solid var(--main-border-color);
+    background: var(--spotlight-bg);
+    box-shadow: var(--spotlight-shadow);
+    transition: box-shadow 0.15s ease, border-color 0.15s ease;
+  }
+
+  #search:focus-within {
+    border-color: var(--link-color);
+    box-shadow: var(--spotlight-shadow), var(--spotlight-ring);
   }
 }
