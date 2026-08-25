@@ -1,0 +1,136 @@
+---
+---
+
+@use 'abstracts/variables' with (
+  $theme: '{{ site.theme_mode }}'
+);
+
+/* prettier-ignore */
+@use 'main
+{%- if jekyll.environment == 'production' -%}
+  .bundle
+{%- endif -%}
+';
+
+/* append your custom style below */
+
+/* ---------------------------------------------------------------
+   CMSNet "Golden Gate" scheme
+   Light: warm paper, shaded beige sidebar, gold accents, indigo links
+   Dark:  moody indigo, gold sidebar accents
+   --------------------------------------------------------------- */
+
+@mixin gg-light {
+  /* Framework */
+  --main-bg: #faf7f1;
+  --main-border-color: #ece6da;
+
+  /* Text */
+  --text-color: #3a3944;
+  --text-muted-color: #79756c;
+  --heading-color: #2c2b36;
+  --link-color: #4d4bb5;
+  --link-underline-color: #d3d1ec;
+  --blockquote-border-color: #e6d3a1;
+  --checkbox-checked-color: #b98a1e;
+
+  /* Sidebar — shaded warm beige, gold title, indigo-charcoal nav */
+  --site-title-color: #96762a;
+  --site-subtitle-color: #6e675a;
+  --sidebar-bg: #f0ebe0;
+  --sidebar-border-color: #e2dbcc;
+  --sidebar-muted-color: #5f594b;
+  --sidebar-active-color: #23222c;
+  --sidebar-hover-bg: rgb(214 190 132 / 28%);
+  --sidebar-btn-bg: #faf7f1;
+  --sidebar-btn-color: #79756c;
+
+  /* Topbar */
+  --topbar-bg: rgb(250 247 241 / 70%);
+  --topbar-text-color: #4a4854;
+
+  /* Home page + article tiles */
+  --post-list-text-color: #5b5850;
+  --card-bg: #fffdf9;
+  --card-hover-bg: #efe9db;
+  --card-shadow:
+    rgb(120 104 64 / 8%) 0 2px 6px 0, rgb(210 200 178 / 30%) 0 0 0 1px;
+  --btn-paginator-hover-color: var(--sidebar-bg);
+
+  /* Posts */
+  --toc-highlight: #4d4bb5;
+  --btn-share-hover-color: #4d4bb5;
+  --tb-odd-bg: #faf8f2;
+  --tb-border-color: #e8e2d5;
+}
+
+@mixin gg-dark {
+  /* Framework */
+  --main-bg: #16161f;
+  --main-border-color: #262636;
+
+  /* Text */
+  --text-color: #c6c4d4;
+  --text-muted-color: #8b88a0;
+  --text-muted-highlight-color: #b8b5cc;
+  --heading-color: #e8e6f2;
+  --link-color: #928ff5;
+  --link-underline-color: #4b4880;
+  --blockquote-border-color: #3c3a58;
+  --blockquote-text-color: #8b88a0;
+  --button-bg: #1b1b26;
+  --btn-border-color: #2b2b3e;
+  --card-header-bg: #20202e;
+  --checkbox-checked-color: #d9b25c;
+  --menu-bg: #1c1c29;
+
+  /* Sidebar — deeper indigo, gold title, gold hover wash */
+  --site-title-color: #d9b25c;
+  --site-subtitle-color: #8b88a0;
+  --sidebar-bg: #101019;
+  --sidebar-border-color: #1f1f2e;
+  --sidebar-muted-color: #8b88a0;
+  --sidebar-active-color: #f0eefa;
+  --sidebar-hover-bg: rgb(217 178 92 / 12%);
+  --sidebar-btn-bg: #1b1b28;
+  --sidebar-btn-color: #8b88a0;
+  --avatar-border-color: rgb(217 178 92 / 80%);
+
+  /* Topbar */
+  --topbar-bg: rgb(22 22 31 / 64%);
+
+  /* Home page + article tiles */
+  --post-list-text-color: #b4b2c4;
+  --card-bg: #1c1c29;
+  --card-hover-bg: #232336;
+  --btn-paginator-hover-color: var(--sidebar-bg);
+
+  /* Posts */
+  --toc-highlight: #928ff5;
+  --btn-share-hover-color: #928ff5;
+  --tb-odd-bg: #191925;
+  --tb-border-color: #2a2a3c;
+}
+
+/* Apply per mode, honoring the sidebar toggle and OS preference */
+@media (prefers-color-scheme: light) {
+  html:not([data-mode]),
+  html[data-mode='light'] {
+    @include gg-light;
+  }
+
+  html[data-mode='dark'] {
+    @include gg-dark;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-mode]),
+  html[data-mode='dark'] {
+    @include gg-dark;
+  }
+
+  html[data-mode='light'] {
+    @include gg-light;
+  }
+}
