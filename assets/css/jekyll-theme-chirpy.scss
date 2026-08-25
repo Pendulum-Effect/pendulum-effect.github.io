@@ -236,14 +236,20 @@
   display: none;
 }
 
-/* Spotlight-style search, centered in the topbar (desktop only —
-   the mobile search overlay keeps stock behavior) */
+/* Spotlight-style search, centered over the main (cards) column,
+   not the full topbar (desktop only — mobile search stays stock) */
 @media (min-width: 850px) {
+  #topbar {
+    position: relative;
+  }
+
   #search {
-    width: 100%;
-    max-width: 34rem;
-    margin-left: auto;
-    margin-right: auto; /* centers it; also cancels the theme's right offsets */
+    position: absolute;
+    top: 50%;
+    left: 45.85%; /* center of the 11/12 main column (no side panel yet) */
+    transform: translate(-50%, -50%);
+    width: min(34rem, 58%);
+    margin: 0;
     padding: 0.35rem 0.85rem;
     border-radius: 0.65rem;
     border: 1px solid var(--main-border-color);
@@ -255,5 +261,11 @@
   #search:focus-within {
     border-color: var(--link-color);
     box-shadow: var(--spotlight-shadow), var(--spotlight-ring);
+  }
+}
+
+@media (min-width: 1200px) {
+  #search {
+    left: 37.5%; /* main column narrows to 9/12 once the right panel appears */
   }
 }
