@@ -3,6 +3,9 @@ title: "mu-poe-carrier: forking a cyberdeck into a PoE server sled (schematic v0
 date: 2026-08-23 14:00:00 -0500
 categories: [mu-poe-carrier]
 tags: [lattepanda-mu, poe, kicad, zimaos, usb-c]
+image:
+  path: /assets/img/posts/mu-poe-carrier/cover.jpg
+  alt: "Stylized PCB routing graphic for the mu-poe-carrier v02 schematic"
 ---
 
 The goal: a LattePanda Mu server sled for the rack that powers entirely over
