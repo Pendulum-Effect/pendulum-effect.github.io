@@ -252,6 +252,7 @@
     left: 45.85%; /* center of the 11/12 main column (no side panel yet) */
     transform: translate(-50%, -50%);
     width: 61%; /* ~2/3 of the main column at this width */
+    max-width: none; /* the theme caps search at 200px — lift it */
     margin: 0;
     padding: 0.35rem 0.85rem;
     border-radius: 0.65rem;
