@@ -15,101 +15,119 @@
 /* append your custom style below */
 
 /* ---------------------------------------------------------------
-   CMSNet "Golden Gate" scheme
-   Light: warm paper, shaded beige sidebar, gold accents, indigo links
-   Dark:  moody indigo, gold sidebar accents
+   CMSNet "Golden Gate" scheme, v2
+   Modeled on macOS Golden Gate app chrome (Mail / System Settings):
+   neutral system greys, high-contrast text, vivid system-color
+   accents, Settings-style multicolored sidebar nav icons.
    --------------------------------------------------------------- */
 
 @mixin gg-light {
   /* Framework */
-  --main-bg: #faf7f1;
-  --main-border-color: #ece6da;
+  --main-bg: #f5f5f7;
+  --main-border-color: #e3e3e8;
 
-  /* Text */
-  --text-color: #3a3944;
-  --text-muted-color: #79756c;
-  --heading-color: #2c2b36;
-  --link-color: #4d4bb5;
-  --link-underline-color: #d3d1ec;
-  --blockquote-border-color: #e6d3a1;
-  --checkbox-checked-color: #b98a1e;
+  /* Text — near-black on light grey for maximum contrast */
+  --text-color: #1d1d1f;
+  --text-muted-color: #6e6e73;
+  --heading-color: #000000;
+  --link-color: #0066cc;
+  --link-underline-color: rgb(0 102 204 / 30%);
+  --blockquote-border-color: #5856d6;
+  --blockquote-text-color: #515154;
+  --checkbox-checked-color: #248a3d;
 
-  /* Sidebar — shaded warm beige, gold title, indigo-charcoal nav */
-  --site-title-color: #96762a;
-  --site-subtitle-color: #6e675a;
-  --sidebar-bg: #f0ebe0;
-  --sidebar-border-color: #e2dbcc;
-  --sidebar-muted-color: #5f594b;
-  --sidebar-active-color: #23222c;
-  --sidebar-hover-bg: rgb(214 190 132 / 28%);
-  --sidebar-btn-bg: #faf7f1;
-  --sidebar-btn-color: #79756c;
+  /* Sidebar */
+  --site-title-color: #b08a1e;
+  --site-subtitle-color: #6e6e73;
+  --sidebar-bg: #e8e8ed;
+  --sidebar-border-color: #d9d9e0;
+  --sidebar-muted-color: #48484d;
+  --sidebar-active-color: #000000;
+  --sidebar-hover-bg: rgb(0 122 255 / 12%);
+  --sidebar-btn-bg: #f5f5f7;
+  --sidebar-btn-color: #48484d;
 
   /* Topbar */
-  --topbar-bg: rgb(250 247 241 / 70%);
-  --topbar-text-color: #4a4854;
+  --topbar-bg: rgb(245 245 247 / 72%);
+  --topbar-text-color: #1d1d1f;
 
-  /* Home page + article tiles */
-  --post-list-text-color: #5b5850;
-  --card-bg: #fffdf9;
-  --card-hover-bg: #efe9db;
+  /* Home page + article tiles — white cards, Settings-style */
+  --post-list-text-color: #3a3a3e;
+  --card-bg: #ffffff;
+  --card-hover-bg: #eaeaef;
   --card-shadow:
-    rgb(120 104 64 / 8%) 0 2px 6px 0, rgb(210 200 178 / 30%) 0 0 0 1px;
+    rgb(0 0 0 / 6%) 0 2px 8px 0, rgb(0 0 0 / 4%) 0 0 0 1px;
   --btn-paginator-hover-color: var(--sidebar-bg);
 
   /* Posts */
-  --toc-highlight: #4d4bb5;
-  --btn-share-hover-color: #4d4bb5;
-  --tb-odd-bg: #faf8f2;
-  --tb-border-color: #e8e2d5;
+  --toc-highlight: #0066cc;
+  --btn-share-hover-color: #0066cc;
+  --tb-odd-bg: #fafafc;
+  --tb-border-color: #e3e3e8;
+
+  /* Nav icon accents (Settings-style) */
+  --nav-icon-1: #007aff; /* Home */
+  --nav-icon-2: #ff9500; /* Categories */
+  --nav-icon-3: #34c759; /* Tags */
+  --nav-icon-4: #af52de; /* Archives */
+  --nav-icon-5: #ff375f; /* About */
 }
 
 @mixin gg-dark {
-  /* Framework */
-  --main-bg: #16161f;
-  --main-border-color: #262636;
+  /* Framework — Mail/Settings neutral near-blacks */
+  --main-bg: #1c1c1e;
+  --main-border-color: #38383a;
 
-  /* Text */
-  --text-color: #c6c4d4;
-  --text-muted-color: #8b88a0;
-  --text-muted-highlight-color: #b8b5cc;
-  --heading-color: #e8e6f2;
-  --link-color: #928ff5;
-  --link-underline-color: #4b4880;
-  --blockquote-border-color: #3c3a58;
-  --blockquote-text-color: #8b88a0;
-  --button-bg: #1b1b26;
-  --btn-border-color: #2b2b3e;
-  --card-header-bg: #20202e;
-  --checkbox-checked-color: #d9b25c;
-  --menu-bg: #1c1c29;
+  /* Text — bright, high contrast */
+  --text-color: #e5e5ea;
+  --text-muted-color: #98989d;
+  --text-muted-highlight-color: #c7c7cc;
+  --heading-color: #ffffff;
+  --label-color: #c7c7cc;
+  --link-color: #0a84ff;
+  --link-underline-color: rgb(10 132 255 / 40%);
+  --blockquote-border-color: #5e5ce6;
+  --blockquote-text-color: #98989d;
+  --button-bg: #2c2c2e;
+  --btn-border-color: #3a3a3c;
+  --card-header-bg: #2c2c2e;
+  --checkbox-checked-color: #32d74b;
+  --menu-bg: #2c2c2e;
 
-  /* Sidebar — deeper indigo, gold title, gold hover wash */
-  --site-title-color: #d9b25c;
-  --site-subtitle-color: #8b88a0;
-  --sidebar-bg: #101019;
-  --sidebar-border-color: #1f1f2e;
-  --sidebar-muted-color: #8b88a0;
-  --sidebar-active-color: #f0eefa;
-  --sidebar-hover-bg: rgb(217 178 92 / 12%);
-  --sidebar-btn-bg: #1b1b28;
-  --sidebar-btn-color: #8b88a0;
-  --avatar-border-color: rgb(217 178 92 / 80%);
+  /* Sidebar — slightly lifted from main bg, gold title, white active */
+  --site-title-color: #ffd60a;
+  --site-subtitle-color: #98989d;
+  --sidebar-bg: #242426;
+  --sidebar-border-color: #38383a;
+  --sidebar-muted-color: #aeaeb2;
+  --sidebar-active-color: #ffffff;
+  --sidebar-hover-bg: rgb(10 132 255 / 18%);
+  --sidebar-btn-bg: #2c2c2e;
+  --sidebar-btn-color: #aeaeb2;
+  --avatar-border-color: rgb(255 214 10 / 70%);
 
   /* Topbar */
-  --topbar-bg: rgb(22 22 31 / 64%);
+  --topbar-bg: rgb(28 28 30 / 70%);
+  --topbar-text-color: var(--text-color);
 
-  /* Home page + article tiles */
-  --post-list-text-color: #b4b2c4;
-  --card-bg: #1c1c29;
-  --card-hover-bg: #232336;
+  /* Home page + article tiles — Settings-card grey */
+  --post-list-text-color: #c7c7cc;
+  --card-bg: #2c2c2e;
+  --card-hover-bg: #3a3a3c;
   --btn-paginator-hover-color: var(--sidebar-bg);
 
   /* Posts */
-  --toc-highlight: #928ff5;
-  --btn-share-hover-color: #928ff5;
-  --tb-odd-bg: #191925;
-  --tb-border-color: #2a2a3c;
+  --toc-highlight: #0a84ff;
+  --btn-share-hover-color: #0a84ff;
+  --tb-odd-bg: #232325;
+  --tb-border-color: #38383a;
+
+  /* Nav icon accents (Settings-style) */
+  --nav-icon-1: #0a84ff; /* Home */
+  --nav-icon-2: #ff9f0a; /* Categories */
+  --nav-icon-3: #32d74b; /* Tags */
+  --nav-icon-4: #bf5af2; /* Archives */
+  --nav-icon-5: #ff6482; /* About */
 }
 
 /* Apply per mode, honoring the sidebar toggle and OS preference */
@@ -133,4 +151,25 @@
   html[data-mode='light'] {
     @include gg-light;
   }
+}
+
+/* Settings-style colored sidebar nav icons */
+#sidebar .nav-item:nth-child(1) .nav-link > i {
+  color: var(--nav-icon-1);
+}
+
+#sidebar .nav-item:nth-child(2) .nav-link > i {
+  color: var(--nav-icon-2);
+}
+
+#sidebar .nav-item:nth-child(3) .nav-link > i {
+  color: var(--nav-icon-3);
+}
+
+#sidebar .nav-item:nth-child(4) .nav-link > i {
+  color: var(--nav-icon-4);
+}
+
+#sidebar .nav-item:nth-child(5) .nav-link > i {
+  color: var(--nav-icon-5);
 }
