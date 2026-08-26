@@ -260,7 +260,7 @@
 
   /* Make room at the top of the sidebar */
   #sidebar .profile-wrapper {
-    margin-top: 3.5rem;
+    margin-top: 6rem;
   }
 }
 
@@ -397,4 +397,21 @@
 #sidebar .site-title {
   font-size: 1.3rem;
   margin-top: 0.75rem;
+}
+
+/* Homepage gets a page title like Categories/Tags/About do,
+   with matching type and spacing (their h1: heading color,
+   weight 400, fluid Bootstrap sizing, 3rem top / ~2.5rem below).
+   Hidden under 850px, same as dynamic-title on other pages. */
+@media (min-width: 850px) {
+  #post-list::before {
+    content: 'Home';
+    display: block;
+    color: var(--heading-color);
+    font-family: variables.$font-family-heading;
+    font-weight: 400;
+    font-size: calc(1.375rem + 1.5vw);
+    line-height: 1.2;
+    margin: 3rem 0 2.5rem;
+  }
 }
