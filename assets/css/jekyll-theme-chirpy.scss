@@ -448,3 +448,29 @@
 footer[aria-label='Site Info'] {
   display: none;
 }
+
+/* About page section cards */
+.about-card {
+  background: var(--card-bg);
+  border: 1px solid var(--main-border-color);
+  border-radius: 0.65rem;
+  padding: 1.4rem 1.6rem;
+  margin-bottom: 1.25rem;
+}
+
+.about-card > h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-top: 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.about-card > h2 > i {
+  font-size: 1rem;
+}
+
+.about-card > :last-child {
+  margin-bottom: 0;
+}
