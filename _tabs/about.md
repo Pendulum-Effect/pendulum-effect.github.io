@@ -3,6 +3,9 @@ icon: fas fa-info-circle
 order: 4
 ---
 
+<div class="about-card" markdown="1">
+## <i class="fas fa-flask" style="color: var(--nav-icon-5)"></i> What this is
+
 I build things around a homelab called CMSNet — embedded firmware, custom
 PCBs, milled-aluminum enclosures, and the software that ties them together.
 This site is a lab notebook, not a publication: entries document real build
@@ -10,6 +13,7 @@ progress, including the dead ends.
 
 Everything here is hobbyist work, unmonetized, and frequently built on the
 shoulders of open-source projects that are credited in each post and repo.
+</div>
 
 <div class="about-card" markdown="1">
 ## <i class="fas fa-shield-halved" style="color: var(--nav-icon-1)"></i> House rules
