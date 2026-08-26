@@ -361,3 +361,29 @@
   border-color: var(--link-color);
   color: var(--link-color);
 }
+
+/* ---------------------------------------------------------------
+   Homepage cards: preview image inlaid on the LEFT
+   (theme default is right via flex-md-row-reverse; the image
+   column is first in the DOM, so plain row order = image left)
+   --------------------------------------------------------------- */
+@media (min-width: 768px) {
+  #post-list .post-preview.row {
+    flex-direction: row !important; /* beat the Bootstrap utility */
+  }
+}
+
+/* Inset tile: a gap of card background around the image, a smaller
+   radius concentric with the card's 10px corners, and a hairline
+   border. Applies at every breakpoint (image-left on desktop,
+   image-top on mobile). */
+#post-list .card .preview-img {
+  margin: 0.5rem;
+  border-radius: 6px; /* card 10px − 8px gap, nudged up for optics */
+  border: 1px solid var(--main-border-color);
+  overflow: hidden;
+}
+
+#post-list .card .preview-img img {
+  border-radius: 0; /* the wrapper clips; kill theme corner rules */
+}
