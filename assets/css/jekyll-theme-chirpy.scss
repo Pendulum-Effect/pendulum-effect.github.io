@@ -215,14 +215,16 @@
 
 /* Center the avatar; translate offsets the profile block's
    asymmetric padding (2.5rem left / 1.25rem right) */
-#sidebar #avatar {
+#sidebar #avatar,
+#sidebar .site-title {
   margin-left: auto;
   margin-right: auto;
   translate: -0.625rem 0;
 }
 
 @media (min-width: 1920px) {
-  #sidebar #avatar {
+  #sidebar #avatar,
+  #sidebar .site-title {
     translate: -1.125rem 0; /* padding grows to 3.5rem left on very large screens */
   }
 }
@@ -397,21 +399,27 @@
 #sidebar .site-title {
   font-size: 1.3rem;
   margin-top: 0.75rem;
+  margin-bottom: 1.75rem; /* ~20px more room before the nav */
+  text-align: center;
 }
 
-/* Homepage gets a page title like Categories/Tags/About do,
-   with matching type and spacing (their h1: heading color,
-   weight 400, fluid Bootstrap sizing, 3rem top / ~2.5rem below).
-   Hidden under 850px, same as dynamic-title on other pages. */
+/* Page titles (Home pseudo-title + the real dynamic-title on
+   Categories/Tags/Archives/About): section-heading size, raised
+   into the empty topbar band to sit nearly level with the search
+   bar. Hidden under 850px, same as dynamic-title on other pages. */
 @media (min-width: 850px) {
   #post-list::before {
     content: 'Home';
     display: block;
+  }
+
+  #post-list::before,
+  main h1.dynamic-title {
     color: var(--heading-color);
     font-family: variables.$font-family-heading;
-    font-weight: 400;
-    font-size: calc(1.375rem + 1.5vw);
-    line-height: 1.2;
-    margin: 3rem 0 2.5rem;
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    margin: -1.75rem 0 1.75rem; /* main starts 3rem down; pull to ~1.25rem */
   }
 }
