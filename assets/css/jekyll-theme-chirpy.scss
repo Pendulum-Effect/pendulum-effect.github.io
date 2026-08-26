@@ -442,3 +442,9 @@
 #panel-wrapper .access {
   display: none;
 }
+
+/* Footer removed sitewide — its contents (copyright + Jekyll/Chirpy
+   credit) now live on the About page */
+footer[aria-label='Site Info'] {
+  display: none;
+}
