@@ -491,10 +491,34 @@ footer[aria-label='Site Info'] {
 
 .card.categories {
   border-radius: 0.65rem;
+  overflow: hidden; /* nothing inside can poke a square corner out */
 }
 
-/* Folder icons pick up the Categories accent */
-.categories i.far,
-.categories i.fas {
-  color: var(--nav-icon-2);
+/* Uniform tile: the header loses its inner-box background and the
+   square bottom corners it keeps for sublists these tiles don't have */
+.categories .card-header,
+.categories .card-header.hide-border-bottom {
+  background: transparent;
+  border-radius: calc(0.65rem - 1px);
+  padding: 0.9rem 1rem;
+}
+
+/* Icon + title on line one; post count always under the title */
+.categories .card-header > span.ms-2 {
+  display: block;
+}
+
+.categories .card-header > span.ms-2 > a {
+  display: inline-block;
+  max-width: 14ch; /* ~16 chars, then ellipsis */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: bottom;
+}
+
+.categories .card-header > span.ms-2 > span.text-muted {
+  display: block;
+  margin-top: 0.15rem;
+  margin-left: 2rem; /* sit under the title text, past the icon */
 }
