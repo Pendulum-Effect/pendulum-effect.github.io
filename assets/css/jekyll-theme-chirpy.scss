@@ -208,13 +208,9 @@
   color: var(--nav-icon-5);
 }
 
-/* Let the subtitle grow instead of overflowing into the nav
-   (theme hard-codes height: 3rem, which overlaps when the
-   tagline wraps to 3+ lines on narrow screens) */
+/* Subtitle removed for a tighter profile block */
 #sidebar .site-subtitle {
-  height: auto;
-  min-height: 3rem;
-  margin-bottom: 0.5rem;
+  display: none;
 }
 
 /* Center the avatar; translate offsets the profile block's
@@ -236,25 +232,20 @@
   display: none;
 }
 
-/* Spotlight-style search, centered over the main (cards) column,
-   not the full topbar (desktop only — mobile search stays stock) */
+/* TEST DRIVE: Settings-style search pinned inside the sidebar.
+   The element stays in the topbar markup (mobile flow untouched);
+   it is only DRAWN over the sidebar on desktop via position:fixed.
+   Sidebar is 260px wide (300px at >=1650px). */
 @media (min-width: 850px) {
-  #topbar {
-    position: relative;
-  }
-
   #search {
-    position: absolute;
-
-    /* Vertical center of the 5rem band above the first card
-       (3rem topbar + 2rem content top margin) */
-    top: 2.5rem;
-    left: 45.85%; /* center of the 11/12 main column (no side panel yet) */
-    transform: translate(-50%, -50%);
-    width: 61%; /* ~2/3 of the main column at this width */
+    position: fixed;
+    top: 1rem;
+    left: 1.25rem;
+    width: calc(260px - 2.5rem);
     max-width: none; /* the theme caps search at 200px — lift it */
     margin: 0;
-    padding: 0.35rem 0.85rem;
+    z-index: 100;
+    padding: 0.25rem 0.7rem;
     border-radius: 0.65rem;
     border: 1px solid var(--main-border-color);
     background: var(--spotlight-bg);
@@ -266,12 +257,16 @@
     border-color: var(--link-color);
     box-shadow: var(--spotlight-shadow), var(--spotlight-ring);
   }
+
+  /* Make room at the top of the sidebar */
+  #sidebar .profile-wrapper {
+    margin-top: 3.5rem;
+  }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1650px) {
   #search {
-    left: 37.5%; /* main column narrows to 9/12 once the right panel appears */
-    width: 50%; /* ~2/3 of the 9/12 card column */
+    width: calc(300px - 2.5rem); /* sidebar widens on very large screens */
   }
 }
 
@@ -391,4 +386,15 @@
 
 #post-list .card .preview-img img {
   border-radius: 0; /* the wrapper clips; kill theme corner rules */
+}
+
+/* Compact profile: smaller avatar and title */
+#sidebar #avatar {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+#sidebar .site-title {
+  font-size: 1.3rem;
+  margin-top: 0.75rem;
 }
