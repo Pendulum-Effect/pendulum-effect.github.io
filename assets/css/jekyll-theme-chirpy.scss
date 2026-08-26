@@ -435,3 +435,10 @@
     margin-top: -1.75rem;
   }
 }
+
+/* Right-panel widgets (Recently Updated / Trending Tags) removed —
+   redundant with the Tags page. On article pages the Contents (TOC)
+   sits outside .access, so it rises to the top slot automatically. */
+#panel-wrapper .access {
+  display: none;
+}
