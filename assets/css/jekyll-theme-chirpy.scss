@@ -379,6 +379,11 @@
    image-top on mobile). */
 #post-list .card .preview-img {
   margin: 0.5rem;
+
+  /* Theme sizes this at 100% x 100%; margins add OUTSIDE that, so
+     subtract them or the tile overflows the card */
+  width: calc(100% - 1rem);
+  height: calc(100% - 1rem);
   border-radius: 6px; /* card 10px − 8px gap, nudged up for optics */
   border: 1px solid var(--main-border-color);
   overflow: hidden;
