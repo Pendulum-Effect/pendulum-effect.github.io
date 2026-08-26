@@ -426,7 +426,7 @@
   /* Home's pseudo-title hangs off the post list, which sits ~2rem
      deeper than the pages' real titles — pull it up the difference */
   #post-list::before {
-    margin-top: -3.75rem;
+    margin-top: -4.5rem;
   }
 
   /* Article pages: raise the post title into the same top band
