@@ -11,10 +11,16 @@ progress, including the dead ends.
 Everything here is hobbyist work, unmonetized, and frequently built on the
 shoulders of open-source projects that are credited in each post and repo.
 
-**House rules for what gets published:** no internal IPs, no network topology,
-no device serials, no camera/automation details. Architecture yes, map no.
+<div class="about-card" markdown="1">
+## <i class="fas fa-shield-halved" style="color: var(--nav-icon-1)"></i> House rules
 
-## Built with AI
+What gets published here follows a few hard rules: no internal IPs, no
+network topology, no device serials, no camera or automation details.
+Architecture yes, map no.
+</div>
+
+<div class="about-card" markdown="1">
+## <i class="fas fa-robot" style="color: var(--nav-icon-4)"></i> Built with AI
 
 Much of the work documented here — and a good chunk of this site itself — was
 developed in collaboration with Claude, Anthropic's AI assistant. Code, drafts,
@@ -22,8 +28,10 @@ and debugging often come out of long-running conversations between the author
 and the AI. Design decisions, hardware testing, soldering burns, and
 stubbornness were supplied by the human. Posts note AI assistance where it
 applies; judgment and errors are my own.
+</div>
 
-## Standing on shoulders
+<div class="about-card" markdown="1">
+## <i class="fas fa-code-branch" style="color: var(--nav-icon-3)"></i> Standing on shoulders
 
 This site leans on some excellent open-source work. Thanks to the people
 behind:
@@ -39,11 +47,14 @@ behind:
 The hardware and firmware projects documented in the posts carry their own
 acknowledgements — each project repo credits its upstream work, and when a
 post builds directly on someone's design, they're named in the post.
+</div>
 
-## Rights
+<div class="about-card" markdown="1">
+## <i class="fas fa-scale-balanced" style="color: var(--nav-icon-2)"></i> Rights
 
 © 2026 [Pendulum-Effect](https://github.com/Pendulum-Effect). Except where
 otherwise noted, posts on this site are licensed under
 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) — share and adapt
 freely, with attribution. Code lives in its own repositories under
 whatever license each repo declares.
+</div>
