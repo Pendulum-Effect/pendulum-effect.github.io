@@ -446,7 +446,7 @@
 /* Footer removed sitewide — its contents (copyright + Jekyll/Chirpy
    credit) now live on the About page */
 footer[aria-label='Site Info'] {
-  display: none;
+  display: none !important; /* footer carries d-flex, which is !important */
 }
 
 /* About page section cards */
@@ -473,4 +473,28 @@ footer[aria-label='Site Info'] {
 
 .about-card > :last-child {
   margin-bottom: 0;
+}
+
+/* Categories page: pack category cards into a folder-like tile grid
+   (scoped via :has so ordinary page content is never gridded) */
+@media (min-width: 768px) {
+  .content:has(> .card.categories) {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    gap: 1rem;
+  }
+
+  .card.categories {
+    margin-bottom: 0; /* the grid gap handles spacing */
+  }
+}
+
+.card.categories {
+  border-radius: 0.65rem;
+}
+
+/* Folder icons pick up the Categories accent */
+.categories i.far,
+.categories i.fas {
+  color: var(--nav-icon-2);
 }
