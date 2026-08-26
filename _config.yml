@@ -14,9 +14,9 @@ timezone: America/Chicago
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: CMSNet Build Log
+title: Project Logs
 
-tagline: Homelab, embedded hardware, and custom fabrication — a running lab notebook
+tagline: A lab notebook for all my various ADHD projects.
 
 description: >-
   Build log for CMSNet: ZimaOS homelab, zima-tinyscreen, the Gamekey sled
