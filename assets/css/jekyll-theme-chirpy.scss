@@ -426,7 +426,9 @@
   /* Home's pseudo-title hangs off the post list, which sits ~2rem
      deeper than the pages' real titles — pull it up the difference */
   #post-list::before {
-    margin-top: -4.25rem;
+    margin-top: -4.25rem; /* user-tuned to align with other page titles */
+    margin-bottom: -0.75rem; /* 1.75rem base minus the same 2.5rem lift,
+                                so the cards ride up with the title */
   }
 
   /* Article pages: raise the post title into the same top band
