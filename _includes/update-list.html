@@ -1,5 +1,6 @@
-<!-- Pinned posts panel — shadows the theme's update-list.html
-     (Recently Updated) with a list of posts front-mattered pin: true -->
+<!-- Pinned posts panel — shadows the theme's update-list.html.
+     Renders each pinned post mobile-card style: inset cover image
+     on top (when the post has one), title beneath. -->
 
 {% assign pinned = site.posts | where: 'pin', 'true' %}
 
@@ -8,13 +9,18 @@
     <h2 class="panel-heading">
       <i class="fas fa-thumbtack fa-fw me-1"></i>Pinned
     </h2>
-    <ul class="content list-unstyled ps-0 pb-1 ms-1 mt-2">
+    <div class="content ps-0 ms-1 mt-2">
       {% for post in pinned %}
-        <li class="text-truncate lh-lg">
-          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-        </li>
+        <a class="pinned-post" href="{{ post.url | relative_url }}">
+          {% if post.image %}
+            {% assign src = post.image.path | default: post.image %}
+            {% assign alt = post.image.alt | default: 'Pinned post cover' %}
+            <img class="pinned-cover" src="{{ src }}" alt="{{ alt }}">
+          {% endif %}
+          <span class="pinned-title">{{ post.title }}</span>
+        </a>
       {% endfor %}
-    </ul>
+    </div>
   </section>
   <!-- #access-lastmod -->
 {% endif %}

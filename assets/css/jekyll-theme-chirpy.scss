@@ -453,6 +453,30 @@
   margin-top: 1.75rem;
 }
 
+/* Pinned posts as mini mobile-style cards: inset cover, title below */
+#access-lastmod .pinned-post {
+  display: block;
+}
+
+#access-lastmod .pinned-post:not(:first-of-type) {
+  margin-top: 1rem;
+}
+
+#access-lastmod .pinned-cover {
+  display: block;
+  width: 100%;
+  aspect-ratio: 40 / 21;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid var(--main-border-color);
+  margin-bottom: 0.6rem;
+}
+
+#access-lastmod .pinned-title {
+  display: block;
+  line-height: 1.45;
+}
+
 #panel-wrapper:has(#toc-wrapper) #access-lastmod {
   display: none;
 }
