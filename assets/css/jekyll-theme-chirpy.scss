@@ -475,8 +475,8 @@
 #access-lastmod .pinned-cover {
   display: block;
   width: 100%;
-  height: 9rem; /* fixed height: the card no longer breathes with the
-                   rail's width the way aspect-ratio sizing did */
+  height: 7rem; /* fixed height, sized so the full card (cover + title
+                   + padding) lands level with the center post cards */
   object-fit: cover;
   border-radius: 6px;
   border: 1px solid var(--main-border-color);
