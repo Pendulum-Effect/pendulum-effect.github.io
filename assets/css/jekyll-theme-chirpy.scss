@@ -70,8 +70,9 @@
   --nav-icon-3: #34c759; /* Tags */
   --nav-icon-4: #bf5af2; /* Archives */
   --nav-icon-5: #ff375f; /* About */
-  --nav-chip-bg: #000000;
-  --nav-chip-shadow: 0 2px 5px rgb(0 0 0 / 28%);
+  --nav-chip-bg: #ffffff;
+  --nav-chip-shadow:
+    0 2px 5px rgb(0 0 0 / 14%), inset 0 0 0 1px rgb(0 0 0 / 8%);
   --spotlight-bg: #ffffff;
   --spotlight-shadow: 0 2px 8px rgb(0 0 0 / 10%);
   --spotlight-ring: 0 0 0 3px rgb(0 122 255 / 28%);
@@ -438,10 +439,15 @@
   }
 }
 
-/* Right-panel widgets (Recently Updated / Trending Tags) removed —
-   redundant with the Tags page. On article pages the Contents (TOC)
-   sits outside .access, so it rises to the top slot automatically. */
-#panel-wrapper .access {
+/* Right panel: Trending Tags stays removed (redundant with the Tags
+   page); the update-list slot now hosts the Pinned panel (see the
+   shadowed _includes/update-list.html). On article pages the Pinned
+   panel yields so the Contents (TOC) keeps the top slot. */
+#panel-wrapper .access > section:not(#access-lastmod) {
+  display: none;
+}
+
+#panel-wrapper:has(#toc-wrapper) #access-lastmod {
   display: none;
 }
 
