@@ -1,26 +1,28 @@
 <!-- Pinned posts panel — shadows the theme's update-list.html.
-     Renders each pinned post mobile-card style: inset cover image
-     on top (when the post has one), title beneath. -->
+     Each pinned post renders as a mini card: cover image with a pin
+     badge overlaid top-left, title beneath. -->
 
 {% assign pinned = site.posts | where: 'pin', 'true' %}
 
 {% if pinned.size > 0 %}
   <section id="access-lastmod">
-    <h2 class="panel-heading">
-      <i class="fas fa-thumbtack fa-fw me-1"></i>Pinned
-    </h2>
-    <div class="content ps-0 ms-1 mt-2">
-      {% for post in pinned %}
-        <a class="pinned-post" href="{{ post.url | relative_url }}">
-          {% if post.image %}
-            {% assign src = post.image.path | default: post.image %}
-            {% assign alt = post.image.alt | default: 'Pinned post cover' %}
+    {% for post in pinned %}
+      <a class="pinned-post" href="{{ post.url | relative_url }}">
+        {% if post.image %}
+          {% assign src = post.image.path | default: post.image %}
+          {% assign alt = post.image.alt | default: 'Pinned post cover' %}
+          <span class="pinned-cover-wrap">
             <img class="pinned-cover" src="{{ src }}" alt="{{ alt }}">
-          {% endif %}
+            <i class="fas fa-thumbtack pinned-badge"></i>
+          </span>
           <span class="pinned-title">{{ post.title }}</span>
-        </a>
-      {% endfor %}
-    </div>
+        {% else %}
+          <span class="pinned-title">
+            <i class="fas fa-thumbtack fa-fw me-1"></i>{{ post.title }}
+          </span>
+        {% endif %}
+      </a>
+    {% endfor %}
   </section>
   <!-- #access-lastmod -->
 {% endif %}

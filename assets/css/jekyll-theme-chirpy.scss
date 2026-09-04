@@ -453,13 +453,23 @@
   margin-top: 1.75rem;
 }
 
-/* Pinned posts as mini mobile-style cards: inset cover, title below */
+/* Pinned posts as mini mobile-style cards: wide inset cover with a
+   pin badge overlaid top-left, title below */
+#access-lastmod {
+  padding: 0.6rem 0.6rem 0.9rem; /* tighter than the generic panel card */
+}
+
 #access-lastmod .pinned-post {
   display: block;
 }
 
 #access-lastmod .pinned-post:not(:first-of-type) {
   margin-top: 1rem;
+}
+
+#access-lastmod .pinned-cover-wrap {
+  position: relative;
+  display: block;
 }
 
 #access-lastmod .pinned-cover {
@@ -469,11 +479,29 @@
   object-fit: cover;
   border-radius: 6px;
   border: 1px solid var(--main-border-color);
-  margin-bottom: 0.6rem;
+}
+
+#access-lastmod .pinned-badge {
+  position: absolute;
+  top: 0.45rem;
+  left: 0.45rem;
+  width: 1.7rem;
+  height: 1.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  color: #fff;
+  background: rgb(20 20 22 / 78%);
+  border-radius: 0.45rem;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 40%);
+  backdrop-filter: blur(4px);
 }
 
 #access-lastmod .pinned-title {
   display: block;
+  margin-top: 0.6rem;
+  padding: 0 0.35rem;
   line-height: 1.45;
 }
 
