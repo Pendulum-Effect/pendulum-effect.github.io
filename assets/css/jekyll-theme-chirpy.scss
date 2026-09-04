@@ -456,7 +456,10 @@
 /* Pinned posts as mini mobile-style cards: wide inset cover with a
    pin badge overlaid top-left, title below */
 #access-lastmod {
-  padding: 0.6rem 0.6rem 0.9rem; /* tighter than the generic panel card */
+  /* Same inset recipe as the homepage image tiles: 0.5rem gap of
+     card background around the cover, concentric with the card's
+     10px corner and the cover's 6px radius */
+  padding: 0.5rem 0.5rem 0.85rem;
 }
 
 #access-lastmod .pinned-post {
