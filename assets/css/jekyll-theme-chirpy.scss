@@ -480,8 +480,8 @@
 #access-lastmod .pinned-cover {
   display: block;
   width: 100%;
-  height: 5.6rem; /* calibrated: with true 0.5rem padding, this puts
-                     the card's total height level with center cards */
+  height: 7.25rem; /* calibrated against rendered screenshots: card
+                      total lands level with the center post cards */
   object-fit: cover;
   border-radius: 6px;
   border: 1px solid var(--main-border-color);
