@@ -4,6 +4,10 @@ date: 2026-08-23 12:00:00 -0500
 categories: [meta]
 tags: [cmsnet, homelab]
 pin: true
+image:
+  path: /assets/img/posts/hello/cover.jpg
+  alt: "Stylized system diagram: status display and carrier board wired to a rack of server sleds"
+
 ---
 
 CMSNet is my homelab: a ZimaOS core, UniFi networking, and a slowly growing

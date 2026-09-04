@@ -447,6 +447,12 @@
   display: none;
 }
 
+/* Align the panel's first card with the top of the post cards
+   (theme default is margin-top: 3rem) */
+#panel-wrapper .access {
+  margin-top: 1.75rem;
+}
+
 #panel-wrapper:has(#toc-wrapper) #access-lastmod {
   display: none;
 }
