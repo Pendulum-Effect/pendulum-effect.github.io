@@ -475,7 +475,8 @@
 #access-lastmod .pinned-cover {
   display: block;
   width: 100%;
-  aspect-ratio: 40 / 21;
+  height: 9rem; /* fixed height: the card no longer breathes with the
+                   rail's width the way aspect-ratio sizing did */
   object-fit: cover;
   border-radius: 6px;
   border: 1px solid var(--main-border-color);
@@ -499,7 +500,10 @@
 }
 
 #access-lastmod .pinned-title {
-  display: block;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; /* stable two-line title at any width */
+  overflow: hidden;
   margin-top: 0.6rem;
   padding: 0 0.35rem;
   line-height: 1.45;
