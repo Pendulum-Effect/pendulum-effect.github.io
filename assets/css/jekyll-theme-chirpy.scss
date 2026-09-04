@@ -455,7 +455,9 @@
 
 /* Pinned posts as mini mobile-style cards: wide inset cover with a
    pin badge overlaid top-left, title below */
-#access-lastmod {
+/* Selector must out-rank the generic panel-card padding rule
+   (#panel-wrapper .access > section), which was silently winning */
+#panel-wrapper #access-lastmod {
   /* Same inset recipe as the homepage image tiles: 0.5rem gap of
      card background around the cover, concentric with the card's
      10px corner and the cover's 6px radius */
@@ -478,8 +480,8 @@
 #access-lastmod .pinned-cover {
   display: block;
   width: 100%;
-  height: 7rem; /* fixed height, sized so the full card (cover + title
-                   + padding) lands level with the center post cards */
+  height: 5.6rem; /* calibrated: with true 0.5rem padding, this puts
+                     the card's total height level with center cards */
   object-fit: cover;
   border-radius: 6px;
   border: 1px solid var(--main-border-color);
